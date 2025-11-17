@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras Maduras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #ffffff;
+            color: #5a4a42; /* Tom marrom escuro da imagem */
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-icon {
+            color: #d4af37; /* Dourado */
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            color: #4a3b32;
+        }
+
+        .logo-text span {
+            color: #ffc107; /* Amarelo/Dourado do "MADURAS" */
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #8b7d76;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* --- HERO SECTION (Imagem Principal) --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%; /* Ajuste para focar nos rostos */
+        }
+
+        /* Caixa de texto flutuante "Viaje pela sua saúde mental" */
+        .hero-banner {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 60px;
+            border-radius: 50px; /* Formato de pílula */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .hero-banner h2 {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #5a4a42;
+            font-weight: 700;
+        }
+
+        /* --- DESTINOS (Grid de 3 colunas) --- */
+        .destinations {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+            gap: 20px;
+            text-align: center;
+        }
+
+        .destination-card h3 {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8b7d76;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .destination-card img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Responsividade para Celular */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.8rem;
+            }
+
+            .hero-banner {
+                width: 90%;
+                padding: 15px 20px;
+            }
+            
+            .hero-banner h2 {
+                font-size: 0.9rem;
+            }
+
+            .destinations {
+                grid-template-columns: 1fr; /* 1 coluna no celular */
+            }
+        }
+        #logo-image {
+            width: 160px; /* Largura desejada para a imagem da logo */
+            height: auto; /* Mantém a proporção da imagem */
+            margin-bottom: 5px; /* Espaçamento entre a imagem e o texto "Aventuras" */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">
+            <img id="logo-image" src="logo.jpg" alt="Aventuras Maduras Logo">
+                <img class="fas fa-umbrella-beach"/>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">INÍCIO</a></li>
+                <li><a href="#">SOBRE NÓS</a></li>
+                <li><a href="#">PACOTES</a></li>
+                <li><a href="#">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="idosos.jpg" alt="Grupo de idosos felizes na piscina">
+            
+            <div class="hero-banner">
+                <h2>Viaje pela sua saúde mental</h2>
+            </div>
+        </section>
+
+        <section class="destinations">
+            <div class="destination-card">
+                <h3>PETRÓPOLIS/RJ</h3>
+                <img src="petropolis.jpg" alt="Petrópolis Quitandinha">
+            </div>
+
+            <div class="destination-card">
+                <h3>OURO PRETO/MG</h3>
+                <img src="ouropreto.jpg" alt="Ouro Preto Centro Histórico">
+            </div>
+
+            <div class="destination-card">
+                <h3>UBATUBA/SP</h3>
+                <img src="ubatuba.jpg" alt="Praia de Ubatuba">
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
